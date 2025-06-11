@@ -1,0 +1,59 @@
+{
+  "themes": [
+    {
+      "name": "Lógica de Programação",
+      "imageUrl": "https://example.com/logic_theme.png"
+    },
+    {
+      "name": "Informática Básica",
+      "imageUrl": "https://example.com/computer_theme.png"
+    }
+  ],
+  "questions": [
+    {
+      "questionText": "O que é um algoritmo na programação?",
+      "options": ["Um tipo de linguagem de programação.", "Uma sequência finita de passos para resolver um problema.", "Um erro comum em programas.", "Uma ferramenta para depuração de código."],
+      "correctOptionIndex": 1,
+      "explanation": "Um algoritmo é um conjunto finito de instruções bem definidas e ordenadas que descreve as etapas para resolver um problema ou executar uma tarefa.",
+      "difficulty": 1,
+      "themeId": "logica_programacao",
+      "isCustom": false
+    },
+    {
+      "questionText": "Qual a principal função de uma estrutura condicional (como 'if-else')?",
+      "options": ["Repetir um bloco de código várias vezes.", "Tomar decisões no fluxo do programa com base em uma condição.", "Armazenar múltiplos valores em uma única variável.", "Organizar o código em funções reutilizáveis."],
+      "correctOptionIndex": 1,
+      "explanation": "Estruturas condicionais permitem que o programa execute diferentes blocos de código dependendo se uma condição é verdadeira ou falsa.",
+      "difficulty": 1,
+      "themeId": "logica_programacao",
+      "isCustom": false
+    },
+    {
+      "questionText": "O que é uma variável em programação?",
+      "options": ["Um erro de sintaxe.", "Um local na memória para armazenar dados que podem mudar.", "Um comando para imprimir texto na tela.", "Um tipo de operador matemático."],
+      "correctOptionIndex": 1,
+      "explanation": "Uma variável é um nome simbólico dado a um local de armazenamento na memória, que pode conter diferentes valores durante a execução do programa.",
+      "difficulty": 1,
+      "themeId": "logica_programacao",
+      "isCustom": false
+    },
+    {
+      "questionText": "Qual componente do computador é considerado o 'cérebro' da máquina?",
+      "options": ["Placa de Vídeo (GPU)", "Memória RAM", "Processador (CPU)", "Disco Rígido (HD/SSD)"],
+      "correctOptionIndex": 2,
+      "explanation": "O Processador (CPU) é responsável por executar as instruções e realizar os cálculos, sendo o principal componente de processamento do computador.",
+      "difficulty": 1,
+      "themeId": "informatica_basica",
+      "isCustom": false
+    },
+    {
+      "questionText": "O que significa a sigla 'HTTP' no contexto da internet?",
+      "options": ["HyperText Transfer Protocol", "High-level Text Translation Program", "Home Tool Transfer Project", "Hyperlink Tracking Technology"],
+      "correctOptionIndex": 0,
+      "explanation": "HTTP (HyperText Transfer Protocol) é o protocolo usado para a transferência de informações na World Wide Web.",
+      "difficulty": 2,
+      "themeId": "informatica_basica",
+      "isCustom": false
+    }
+  ]
+}

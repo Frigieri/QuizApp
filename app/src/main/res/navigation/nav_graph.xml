@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.quizapp.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_themeListFragment"
+            app:destination="@id/themeListFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.quizapp.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_themeListFragment"
+            app:destination="@id/themeListFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.quizapp.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerFragment_to_themeListFragment"
+            app:destination="@id/themeListFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/themeListFragment"
+        android:name="com.example.quizapp.ui.themes.ThemeListFragment"
+        android:label="fragment_theme_list"
+        tools:layout="@layout/fragment_theme_list">
+        <action
+            android:id="@+id/action_themeListFragment_to_quizFragment"
+            app:destination="@id/quizFragment">
+            <argument
+                android:name="themeId"
+                app:argType="string" />
+            <argument
+                android:name="isCustomTheme"
+                app:argType="boolean"
+                android:defaultValue="false" />
+        </action>
+        <action
+            android:id="@+id/action_themeListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_themeListFragment_to_customThemeFragment"
+            app:destination="@id/customThemeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.quizapp.ui.quiz.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz">
+        <argument
+            android:name="themeId"
+            app:argType="string" />
+        <argument
+            android:name="isCustomTheme"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment">
+            <argument
+                android:name="score"
+                app:argType="integer" />
+            <argument
+                android:name="totalQuestions"
+                app:argType="integer" />
+            <argument
+                android:name="themeId"
+                app:argType="string" />
+            <argument
+                android:name="isCustomTheme"
+                app:argType="boolean"
+                android:defaultValue="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapp.ui.quiz.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="totalQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="themeId"
+            app:argType="string" />
+        <argument
+            android:name="isCustomTheme"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_resultFragment_to_themeListFragment"
+            app:destination="@id/themeListFragment"
+            app:popUpTo="@id/themeListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_resultFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.quizapp.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customThemeFragment"
+        android:name="com.example.quizapp.ui.custom.CustomThemeFragment"
+        android:label="fragment_custom_theme"
+        tools:layout="@layout/fragment_custom_theme">
+        <action
+            android:id="@+id/action_customThemeFragment_to_customQuestionFragment"
+            app:destination="@id/customQuestionFragment">
+            <argument
+                android:name="customThemeId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/customQuestionFragment"
+        android:name="com.example.quizapp.ui.custom.CustomQuestionFragment"
+        android:label="fragment_custom_question"
+        tools:layout="@layout/fragment_custom_question">
+        <argument
+            android:name="customThemeId"
+            app:argType="string" />
+        <argument
+            android:name="isCustomTheme"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+</navigation>
